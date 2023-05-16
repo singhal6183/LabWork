@@ -30,7 +30,7 @@ public class Week01Lab {
 
 						
 						// 6. Create a variable to hold a street address
-				String customerAddress = "32 Lakeside Drive";
+				String customerAddress = "321 Lakeside Drive";
 						
 
 						// 7. Print all variables to the console
