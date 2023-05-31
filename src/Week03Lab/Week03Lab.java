@@ -171,7 +171,7 @@ public class Week03Lab {
 	
 		// 21. Write and test a method that takes a string and 
 		//			returns true if the string is a palindrome
-		System.out.println("\nQuestion 21: Is String Palindrome");
+		System.out.println("\nQuestion 21: Is String 'radar' Palindrome");
 		System.out.println(testMethod7("radar"));
 		
 		

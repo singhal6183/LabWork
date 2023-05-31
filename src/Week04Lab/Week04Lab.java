@@ -1,5 +1,4 @@
 package Week04Lab;
-
 import java.util.*;
 
 public class Week04Lab {
@@ -31,7 +30,7 @@ public class Week04Lab {
 			//		b. Add 5 Strings to it, each with a different length
 		
 		System.out.println("\nQuestion 2: All elements in List");
-		List<String> myList = new ArrayList<String>();
+		List<String> myList = new ArrayList<>();
 		myList.add("English");
 		myList.add("math");
 		myList.add("Science");
@@ -97,7 +96,7 @@ public class Week04Lab {
 			
 			// 9. Create a set of strings and add 5 values
 		System.out.println("\nQuestion 9:Set of Strings");
-		HashSet<String> mySet = new HashSet<String>();
+		Set<String> mySet = new HashSet<String>();
 		mySet.add("Book");
 		mySet.add("Pen");
 		mySet.add("Pencil");
@@ -111,28 +110,52 @@ public class Week04Lab {
 			//			and returns a set of strings consisting of all the strings in the
 			// 			input set that start with the character parameter.
 
-
+		System.out.println("\nQuestion 10: New set of Strings, each string starting with character passing as input character=:");
+		Set<String> newSet = setMatchingChar(mySet,'P');
+		System.out.println(newSet);
 			
 			// 11. Write and test a method that takes a set of strings 
 			//			and returns a list of the same strings
 		
+		System.out.println("\nQuestion 11: New List containing all strings from input Set is:");
+		List<String> newList = listAfterSet(mySet);
+		System.out.println(newList);
 			
 
 			// 12. Write and test a method that takes a set of integers 
 			//			and returns a new set of integers containing only even numbers 
 			//			from the original set
+		System.out.println("\nQuestion 12-a): Origional Set of Integer is:");
+		Set<Integer> mySetInt = new HashSet<Integer>();
+		mySetInt.add(35);
+		mySetInt.add(12);
+		mySetInt.add(49);
+		mySetInt.add(64);
+		mySetInt.add(19);
+		System.out.println(mySetInt);
+		System.out.println("\nQuestion 12-b): Set of even Integers from origional Set is:");
+		Set<Integer> evenIntSet = evenIntegerSet(mySetInt);
+		System.out.println(evenIntSet);
+		
+		
 
-
-			
 			// 13. Create a map of string and string and add 3 items to it where the key of each
 			// 			is a word and the value is the definition of the word
+		System.out.println("\nQuestion 13: Map of String");
+		Map<String, String> dictionary = new HashMap<String, String>();
+		dictionary.put("Apple", "A crunchy fruit. Usually red, green, or yellow");
+		dictionary.put("Banana", "A yellow fruit which you peel before eating");
+		dictionary.put("Java", "A programming language created in 1995 and still heavily used today");
+		System.out.println(dictionary);
 
 		
 			
 			// 14. Write and test a method that takes a Map<String, String> and a string 
 			// 			and returns the value for a key in the map that matches the
 			// 			string parameter (i.e. like a language dictionary lookup)
-
+		System.out.println("\nQuestion 14:");
+		String value = lookupValue(dictionary, "Apple");
+		System.out.println("Dictionary Result for 'Apple': " + value);
 			
 			// 15. Write and test a method that takes a List<String> 
 			//			and returns a Map<Character, Integer> containing a count of 
@@ -147,30 +170,80 @@ public class Week04Lab {
 		
 		
 		// Method 14:
+	
+	public static String lookupValue(Map<String, String> map, String str)
+	      
+	
+	 {
+		String val ="";
+		for(int i=0; i<map.size(); i++)
+		{
+		if((map.keySet()).equals(str))
+		  
+			val = map.get(i);
+		 
+		}
+		return val;
+	 }
 		
 
 		
 		// Method 12:
+	   public static Set<Integer> evenIntegerSet(Set<Integer> mySet)
+	
+	 {
+	  
+	    List<Integer> newList = new ArrayList<Integer>(mySet);// create List as passing set as parameter
+	    Set<Integer> newEvenSet = new HashSet<Integer>();
+	     for (int i=0; i<newList.size();i++)
+	    { 
+	    	 if(newList.get(i) % 2 == 0)
+	       {
+		      newEvenSet.add(newList.get(i));
+	       } // end of If
+	    }// End of foor loop
+	    return newEvenSet;
 		
+	 }
 
 		
 		// Method 11:
+	
+       public static List<String> listAfterSet(Set<String> mySet1)
+	
+	  {
+	  
+	    List<String> newList = new ArrayList<String>(mySet1);// create List as passing set as parameter
+	    return newList;
+	    
+	   /* List<String> newList = new ArrayList<String>();  // Another method using foor loop
+	     for(String name: mySet1)
+	     {
+	    	 newList.add(name);
+	     }
+	     return newList;*/
+	  } // End of Method
 		
 
 
 		// Method 10:
-/*public static HashSet<String>  SetMatchingChar(HashSet<String> mySet1, char ch)
+      public static Set<String> setMatchingChar(Set<String> mySet1, char ch)
 	
-	{
+	 {
 	  
-	List<String> list = new ArrayList<String>(mySet1);
+	    List<String> newList = new ArrayList<String>(mySet1);// create List as passing set as parameter
+	    Set<String> newSet = new HashSet<String>();
 	  
-	  for (int i=0; i<list.size();i++)
-	  { if( (list.get(i)).charAt(0) == ch   )
-		  List<String> list1= list.get(i);
+	     for (int i=0; i<newList.size();i++)
+	    { 
+	    	 if(newList.get(i).charAt(0) == ch)
+	       {
+		      newSet.add(newList.get(i));
+	       } // end of If
+	    }// End of foor loop
+	    return newSet;
 	  
-	  }
-	}*/
+	  }  // End of Method
 		
 
 		
