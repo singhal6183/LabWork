@@ -1,4 +1,4 @@
-package Week05lab;
+package Week05CodingAssignment;
 
 /*create SpacedLogger class which implement the Logger interface*/
 public class SpacedLogger implements Logger {

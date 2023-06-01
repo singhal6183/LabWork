@@ -1,4 +1,4 @@
-package Week05lab;
+package Week05CodingAssignment;
 
 //create interface with the name of Logger
 public interface Logger {  

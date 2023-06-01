@@ -1,4 +1,4 @@
-package Week05lab;
+package Week05CodingAssignment;
 
 /*create AsteriskLogger class which implement the Logger interface*/
 public class AsteriskLogger implements Logger {
